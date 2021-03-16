@@ -197,7 +197,7 @@ function goToStart(){
         "style",
         "display: block");
     clearInterval(intervalTimer)
-    timeLeft=75;
+    timeLeft=90;
     timerEl.textContent = timeLeft
     quizOver = false;
     
