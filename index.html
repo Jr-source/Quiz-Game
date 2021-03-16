@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -20,7 +20,7 @@
           the 90 second time limit. Incorrect answers will penalized your time
           and score by 10 seconds.
         </p>
-        <button id="startBtn">Start Quiz</button>
+        <button id="startButtopn">Start Quiz</button>
       </section>
 
       <section id="listQuestions" class="hidden">
@@ -55,4 +55,61 @@
 
     <script src="js/script.js"></script>
   </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Quiz</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <button id="btn_scores">View Highscores</button>
+        <span id="time_label">Time: <span id="timer">90</span></span>
+    </header>
+
+    <main>
+        <section id="quiz_intro" class="start_page">
+            <h1>Sports Trivia</h1>
+            <p>Try your best to answer the following sports related questions within
+                the 90 second time limit. Incorrect answers will penalized your time
+                and score by 10 seconds.
+            </p>
+            <button id="start_button">Start Quiz</button>
+        </section>
+        
+        <section id="list_questions" class="hidden">
+            <h3 id="question">QUESTION</h3>
+            <ul id="answers">
+                <li><button id="answer1">Button</button></li>
+                <li><button id="answer2">Button</button></li>
+                <li><button id="answer3">Button</button></li>
+                <li><button id="answer4">Button</button></li>
+            </ul>
+            <hr>
+            <div id="assessment"></div>
+        </section>
+
+        <section id="results" class="hidden">
+            <h2>All done!</h2>
+            <p>Your final score is <span id="final_score"></span>.</p>
+            <div>Enter initials:
+                <input type="text" name="initials" id="initials">
+                <button id="btn_submit_initials">Submit</button>
+            </div>
+        </section>
+
+        <section id="show_scores" class="hidden">
+            <h2>Highscores</h2>
+            <div id="earned_scores"></div>
+            <button id="home_btn">Go Back</button>
+            <button id="btn_clear_scores">Clear Highscores</button>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
 </html>
