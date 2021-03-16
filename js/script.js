@@ -1,4 +1,3 @@
-// Here is a list of multiple choice questions and their answers
 var questions = [ 
     {
         "question": "What’s the diameter of a basketball hoop in inches?",
@@ -53,7 +52,6 @@ var questions = [
 
 
 
-// Selecting the proper tags, id_elements and class_elements
 var startPage = document.getElementById("quiz_intro");
 var startButton = document.getElementById("start_button");
 var timerEl = document.getElementById("timer");
@@ -76,7 +74,6 @@ var homeButton = document.getElementById('home_btn')
 var clearScores = document.getElementById('btn_clear_scores')
 
 
-// Initializing some global variables:
 var subtractedTime = 10;
 var intervalTimer;
 var timeLeft=75; 
@@ -88,7 +85,6 @@ var finalScore = 0
 
 
 
-// Sets the timer
 function quizTime() {
   intervalTimer = setInterval(function() {
     timerEl.textContent = timeLeft;
@@ -107,7 +103,6 @@ function quizTime() {
   }, 1000);
 }
 
-// Hides Home page and starts the timer
 function startQuiz() {
     startPage.setAttribute(
         "style",
@@ -117,7 +112,6 @@ function startQuiz() {
 
 
 
-// Displays question page and starts the quiz
 function displayQuestionPage() {
     startQuiz()
     quiz_page.classList.remove("hidden");
@@ -128,7 +122,6 @@ function displayQuestionPage() {
 }
 
 
-// Displays the question and the answers
 function showQuestion(question_index){
     presentQuestions.textContent = questions[question_index].question;
     firstAnswer.textContent = questions[question_index].answers[0];
@@ -137,7 +130,7 @@ function showQuestion(question_index){
     fourthAnswer.textContent = questions[question_index].answers[3];
 }
 
-// Sets functionality for selecting the answer and switching to the next question
+
 function nextQuestion(event){
     if (event.target.matches("button")){
         if (question_number>=questions.length-1 || timeLeft<=0) {
@@ -165,7 +158,6 @@ function nextQuestion(event){
     
 }
 
-// Ends the quiz and computes the score
 function quizFinished(){
     console.log("Done")
     quiz_page.classList.add("hidden")
@@ -179,7 +171,7 @@ function quizFinished(){
 
 }
 
-// Renders the score and initials
+
 function renderScores(event){
     event.preventDefault();
     namePage.classList.add("hidden")
@@ -198,7 +190,7 @@ function renderScores(event){
     
 }
 
-// Redirects back to the Home page
+
 function goToStart(){
     highscorePage.classList.add("hidden")
     startPage.setAttribute(
@@ -221,15 +213,14 @@ function clearYourScore(event){
     }
 }
 
-// Shows the scores
 function clickHighScoreButton(event){
-    // event.preventDefault();
+ 
     startQuiz();
     renderScores(event);
 }
 
 
-// Event listeners attached to the buttons:
+
 startButton.addEventListener("click", displayQuestionPage);
 listOfAnswers.addEventListener("click", nextQuestion);
 submitYourInitials.addEventListener("click", renderScores);
