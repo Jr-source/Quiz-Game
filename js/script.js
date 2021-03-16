@@ -76,7 +76,7 @@ var clearScores = document.getElementById('btn_clear_scores')
 
 var subtractedTime = 10;
 var intervalTimer;
-var timeLeft=75; 
+var timeLeft=90; 
 var quizOver = false
 var nextQuestionIndex 
 var question_number = 0
